@@ -1,0 +1,27 @@
+/*******************************************************************************
+ * @author  Michal Rozkydalek
+ * @student 1932198
+ * @version 1.00.0001 — 2021-03-12
+ */
+
+public class Sphere  
+{
+    public double PI = 3.14159; 
+    
+    public Sphere(double radius) //method to call superclass
+    {
+    super(); //call super class
+    }
+    
+    public double calcVolume(double x){  //method to calculate volume of the sphere
+        double radius = x;
+        double volume = 4 / 3 * PI * radius * radius * radius;
+        return volume;
+    }
+    
+    public double calcSurfaceArea(double x){  //method to calculate the surface area of the sphere
+       double radius = x; 
+       double surface = 4 * PI * radius * radius;
+       return surface;
+    }  
+}
