@@ -1,0 +1,72 @@
+/*******************************************************************************
+ * Instance of the Class {@code ColourChange},which is a subclass of JFrame,
+ * represent a frame, which is to apply grid layout manager to the 
+ * frame created and to define 3 buttons called “Change to red”, 
+ * “Change to blue” and “Change to yellow”, respectively. 
+ * 
+ *  Also, it is to arrange these buttons to the corresponding positions 
+ *  of the frame and execute three event handlers to respond to the clicking 
+ *  of the three buttons, i.e. when a button is clicked, the background colour 
+ *  of the frame will change colour corresponding to the name of the button.
+ *  
+ * @author    Michal Rozkydalek
+ * @studentID 1932198
+ * @version   1.00.0000 — 2021-03-11
+ */
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class ColourChange extends JFrame
+{
+    Container container = getContentPane();
+    JButton appButton = new JButton ("Change to red");
+    JButton bppButton = new JButton ("Change to blue");
+    JButton cppButton = new JButton ("Change to yellow");
+    
+    ColourChange()
+    {
+        super("Changing colour by three buttons");
+        container.setLayout(new FlowLayout());
+        container.add(appButton);
+        container.add(bppButton);
+        container.add(cppButton);
+        //
+        ButtonHandler handler = new ButtonHandler();
+        appButton.addActionListener(handler);
+        bppButton.addActionListener(handler);
+        cppButton.addActionListener(handler);
+        //
+        container.setBackground(Color.black);
+        setLocation(400,300);
+        setSize(500,500);
+        setVisible(true);
+    }
+     
+    public static void main(String [] args)
+    {
+        ColourChange aFrame = new ColourChange();
+        aFrame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+        ColourChange bFrame = new ColourChange();
+        aFrame.setDefaultCloseOperation (JFrame.EXIT_ON_CLOSE);
+    }
+     
+    private class ButtonHandler implements ActionListener
+    {
+        public void actionPerformed(ActionEvent event)
+        {
+                 
+            if(event.getSource() == appButton){
+                container.setBackground(Color.red);
+            }
+            if(event.getSource() == bppButton){
+                container.setBackground(Color.blue);
+            }
+            if(event.getSource() == cppButton){
+                container.setBackground(Color.yellow);
+            }
+            
+        }
+
+    }
+}    
