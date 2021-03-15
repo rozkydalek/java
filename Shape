@@ -1,0 +1,6 @@
+public interface Shape //well, there was no specific action explicitly required for this abstract class :)
+{
+        public abstract double calcVolume(); //to be overridden by a subclass method
+        public abstract double calcSurfaceArea(); // to be overridden by a subclass method
+    
+}
