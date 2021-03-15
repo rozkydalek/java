@@ -1,0 +1,84 @@
+/*******************************************************************************
+ * 
+ * The {@code Output} class instances represent the demonstration
+ * of a Java program with four classes named Shape, Sphere, Pyramid and Output.  
+ * 
+ * The Shape class is a superclass and both classes Sphere and Pyramid are 
+ * subclasses of the class Shape.  The main method is located 
+ * in the class Output. The output is to be displayed in the console.
+ * 
+ * The superclass Shape is an abstract class (particularly, abstract interface)
+ * with the following two abstract methods:
+ *
+ *  calcVolume();
+ *  calcSurfaceArea(); 
+ * 
+ * The subclasses do override these abstract methods. 
+ * 
+ * The subclass Sphere has the following data members:
+ * 
+ * radius
+ * PI (π = 3.14159)
+ * 
+ * and the methods calcVolume() and calcSurfaceArea() which override 
+ * the abstract methods in the Shape superclass.
+ * 
+ * The volume is calculated as (4 / 3) * PI * radius * radius * radius,
+ * and the surface area is 4 * PI * radius * radius
+ * 
+ * The subclass Pyramid (representing a structure like those in Egypt) 
+ * has the following members:
+ * 
+ * base
+ * height
+ * 
+ * The volume is calculated as base * base * height / 3,
+ * and the surface area is 4 * base * sqrt((height * height) + (base * base / 4)) / 2,
+ * and the Java function used to calculate the square root of a number is Math.sqrt( )
+ * 
+ * The program creates two objects in class Output.  
+ * One object is instantiated from the class Sphere and the second object 
+ * from the class Pyramid. The Sphere object has a radius of 10.  
+ * The Cylinder object has a base of 230 and a height of 140  
+ * 
+ * The program outputs the input data, the surface area and volume for both objects
+ * as follows:
+ * 
+ * Radius of the sphere is 10.0 units.
+ * Base of the Pyramid is 230.0
+ * and it's height is 140.0 units.
+ * Surface of the sphere is 1256.636 square units
+ * and volume of the sphere is 3141.59 cubic units.
+ * Surface of the pyramid is 166682.57257433963 square units
+ * and volume of the pyramid is 2468666.6666666665 cubic units.
+ * 
+ *
+ * @author  Michal Rozkydalek, student ID 1932198
+ * @version 2.00.0000 — 2021-03-12
+ * Programming for applications, second In-class test, Question 1 
+ */
+
+public class Output
+{
+        
+     public static void main()  //main method to call objects and print results
+    {
+        double r = 10.0;  //input data for calculations
+        double b = 230.0;
+        double h = 140;
+      
+        System.out.println("Radius of the sphere is " + r +" units."); //print out the ipnut data
+        System.out.println("Base of the Pyramid is " + b);
+        System.out.println("and it's height is " + h +" units.");
+        
+        Sphere s = new Sphere(r);  //instantiate class Sphere and execute calculations 
+        System.out.println("Surface of the sphere is " + s.calcSurfaceArea(r) +" square units");
+        System.out.println("and volume of the sphere is " + s.calcVolume(r) +" cubic units.");
+                   
+        Pyramid p = new Pyramid(b, h); //instantiate class Pyramid and execute calculations
+        System.out.println("Surface of the pyramid is " + p.calcSurfaceArea(b,h) +" square units");
+        System.out.println("and volume of the pyramid is " + p.calcVolume(b,h) +" cubic units.");
+        System.out.println("Thank you.");
+       
+    }
+}
