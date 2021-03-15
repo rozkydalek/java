@@ -1,0 +1,24 @@
+public class Pyramid  
+{
+   
+    public double calcVolume(double x,double y) //method to calculate volume of the pyramid
+    {
+       double base = x;
+       double height = y;
+       double volume = (base * base * height / 3);
+       return volume;
+    }
+    
+    public double calcSurfaceArea(double x,double y) //method to calculate surface area of the sphere
+    {
+        double base = x;
+        double height = y;
+        double surface = 4 * base * Math.sqrt((height*height)+(base*base)/4)/2;
+        return surface;
+    }   
+    
+    public Pyramid(double base, double height) //method to call superclass
+    {
+    super();
+    }
+}
